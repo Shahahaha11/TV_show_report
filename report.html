@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Shah">
 
-<title>report</title>
+<title>Viewership analysis of Breaking Bad</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="report_files/libs/clipboard/clipboard.min.js"></script>
 <script src="report_files/libs/quarto-html/quarto.js" type="module"></script>
 <script src="report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="report_files/libs/quarto-html/popper.min.js"></script>
@@ -33,21 +34,166 @@ ul.task-list li input[type="checkbox"] {
 <link href="report_files/libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="report_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="report_files/libs/bootstrap/bootstrap-8a894fcc3cb5e37eb5bf30def131be2f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#show-overview" id="toc-show-overview" class="nav-link active" data-scroll-target="#show-overview">1 Show overview</a></li>
+  <li><a href="#data-basic-statistics" id="toc-data-basic-statistics" class="nav-link" data-scroll-target="#data-basic-statistics">2 Data &amp; basic statistics</a></li>
+  <li><a href="#episode-level-viewership-trend" id="toc-episode-level-viewership-trend" class="nav-link" data-scroll-target="#episode-level-viewership-trend">3 Episode-level viewership trend</a></li>
+  <li><a href="#episode-to-episode-percentage-change" id="toc-episode-to-episode-percentage-change" class="nav-link" data-scroll-target="#episode-to-episode-percentage-change">4 Episode-to-episode percentage change</a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Viewership analysis of <em>Breaking Bad</em></h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shah </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="show-overview" class="level2">
+<h2 class="anchored" data-anchor-id="show-overview">1 Show overview</h2>
+<p><em>Breaking Bad</em> is an American neo-western crime drama that aired on <strong>AMC (2008 – 2013)</strong>.<br>
+It follows high-school chemistry teacher <strong>Walter White</strong> and former pupil <strong>Jesse Pinkman</strong> as they build a meth empire in Albuquerque. The show has</p>
+<p><img src="figs/Unknown-1.jpeg" width="40%" style="margin-right:2%"><img src="figs/Unknown.jpeg" width="40%"></p>
+<hr>
+</section>
+<section id="data-basic-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="data-basic-statistics">2 Data &amp; basic statistics</h2>
+<div id="f49479f2" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="49">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">episode_overall</th>
+<th data-quarto-table-cell-role="th">viewers_millions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>1.41</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>1.49</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>1.08</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>1.09</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>0.97</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="8a0258a3" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="50">
+<pre><code>count    63.000000
+mean      2.242540
+std       1.661832
+min       0.970000
+25%       1.325000
+50%       1.660000
+75%       2.290000
+max      10.280000
+Name: viewers_millions, dtype: float64</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="episode-level-viewership-trend" class="level2">
+<h2 class="anchored" data-anchor-id="episode-level-viewership-trend">3 Episode-level viewership trend</h2>
+<div id="a4cdc925" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/episode_trend.png" class="img-fluid figure-img"></p>
+<figcaption>Episode trend</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="episode-to-episode-percentage-change" class="level2">
+<h2 class="anchored" data-anchor-id="episode-to-episode-percentage-change">4 Episode-to-episode percentage change</h2>
+<div id="2ef4c519" class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/rz/hb914cgn7wb_sxdhbbm8krnh0000gn/T/ipykernel_3801/1919574432.py:1: FutureWarning: The default fill_method='pad' in Series.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  df["pct_change"] = df["viewers_millions"].pct_change() * 100</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="report_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/pct_change.png" class="img-fluid figure-img"></p>
+<figcaption>Percent change</figcaption>
+</figure>
+</div>
+</section>
 
 </main>
 <!-- /main column -->

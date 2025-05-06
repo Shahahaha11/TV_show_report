@@ -1,1 +1,78 @@
+---
+title: "Viewership analysis of *Breaking Bad*"
+author: "Shah"
+format:
+  html:
+    toc: true
+    theme: cosmo
+execute:
+  echo: false
+---
 
+## 1 Show overview
+
+*Breaking Bad* is an American neo-western crime drama that aired on **AMC (2008 – 2013)**.  
+It follows high-school chemistry teacher **Walter White** and former pupil **Jesse Pinkman** as they build a meth empire in Albuquerque. The show has 
+
+   \n<img src="figs/Unknown-1.jpeg" width="40%" style="margin-right:2%">\n<img src="figs/Unknown.jpeg" width="40%">\n
+
+---
+
+## 2 Data & basic statistics
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.rcParams["figure.dpi"] = 120
+
+df = pd.read_csv("data/bb_viewership.csv")
+
+# 🔑 make sure the viewers column is numeric
+df["viewers_millions"] = (
+    df["viewers_millions"]
+      .astype(str)
+      .str.extract(r"([\d\.]+)")   # keep only 0-9 and .
+      .astype(float)
+)
+
+df.head()
+```
+
+```{python}
+summary = df["viewers_millions"].describe()
+summary
+```
+
+---
+
+## 3 Episode-level viewership trend
+
+```{python}
+plt.figure()
+plt.plot(df["episode_overall"], df["viewers_millions"])
+plt.title("U.S. Live Viewership per Episode – *Breaking Bad*")
+plt.xlabel("Episode (overall)")
+plt.ylabel("Millions of viewers")
+plt.tight_layout()
+plt.savefig("figs/episode_trend.png")
+```
+
+![Episode trend](figs/episode_trend.png)
+
+---
+
+## 4 Episode-to-episode percentage change
+
+```{python}
+df["pct_change"] = df["viewers_millions"].pct_change() * 100
+plt.figure()
+df["pct_change"].plot(marker="o")
+plt.axhline(0, lw=0.8)
+plt.title("Episode-to-Episode Change (%)")
+plt.ylabel("%")
+plt.tight_layout()
+plt.savefig("figs/pct_change.png")
+```
+
+![Percent change](figs/pct_change.png)
